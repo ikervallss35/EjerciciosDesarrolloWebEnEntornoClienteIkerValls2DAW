@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+<form action="#enviar" method="get">
+   <label for="dni">DNI:</label>
+    <input type="text" id="dni" name="DNI">
+    <button onclick="return validarDNI()" type="submit">Enviar</button>
+</form>
+<script>
+    const dni = document.getElementById('dni');
+    function validarDNI() {
+        if (dni.value.length == 0) {
+            alert("El campo DNI no tiene datos");
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+</body>
+</html>

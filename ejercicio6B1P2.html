@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <button onclick="mostrarHora()">Hora Actual</button>
+    <p id="hora"></p>
+    <script>
+        function mostrarHora() {
+            var fecha = new Date();
+            var horas = fecha.getHours();
+            var minutos = fecha.getMinutes();
+            var saludo;
+
+            if (horas < 10) {
+                horas = "0" + horas;
+            }
+
+            if (minutos < 10) {
+                minutos = "0" + minutos;
+            }
+
+            if (horas < 14) {
+                saludo = "Buenos días";
+            } else if (horas < 20) {
+                saludo = "Buenas tardes";
+            } else {
+                saludo = "Buenas noches";
+            }
+
+            var mensaje = saludo + ", son las " + horas + ":" + minutos + " horas";
+            document.getElementById("hora").innerText = mensaje;
+        }
+    </script>
+</body>
+</html>

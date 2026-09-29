@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+<p id="texto"></p>
+<button onclick="location.assign('https://www.google.com')">Abrir Google</button>
+<script>
+    document.getElementById("texto").innerText = "La URL de esta página es: " + location.href + "\n" +
+        "El pathname de esta página es: "  + location.pathname + "\n" +
+        "El protocolo de esta página es: " + location.protocol;
+</script>
+</body>
+</html>

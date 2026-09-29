@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+Introduce un número del 1 al 10:<br>
+<input type="number" id="numero">
+<button onclick="comprobar()">Comprobar</button>
+
+<script>
+    function comprobar() {
+        let usuario = parseInt(document.getElementById("numero").value);
+        let aleatorio = parseInt(Math.random() * 10) + 1;
+
+        if (usuario === aleatorio) {
+            alert("Has acertado. El número era " + aleatorio);
+        } else {
+            alert("Has fallado. El número era " + aleatorio);
+        }
+    }
+</script>
+</body>
+</html>
