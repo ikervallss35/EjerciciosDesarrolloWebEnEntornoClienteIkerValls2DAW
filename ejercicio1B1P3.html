@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script>
+        var miDiv;
+        var primerParrafo;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            miDiv = document.getElementById('miDiv');
+            primerParrafo = document.getElementById('primerParrafo');
+        });
+        function añadirParrafo() {
+            var parrafo = document.createElement('p');
+            var texto = document.createTextNode('Párrafo añadido');
+            parrafo.appendChild(texto);
+            miDiv.appendChild(parrafo);
+        }
+        function insertarParrafo() {
+            var parrafo = document.createElement('p');
+            var texto = document.createTextNode('Párrafo insertado');
+            parrafo.appendChild(texto);
+            miDiv.insertBefore(parrafo, primerParrafo.nextSibling);
+        }
+        function reemplazarParrafo() {
+            var segundo = primerParrafo.nextSibling;
+            if (segundo) {
+                var nuevoParrafo = document.createElement('p');
+                var texto = document.createTextNode('Párrafo reemplazado');
+                nuevoParrafo.appendChild(texto);
+                miDiv.replaceChild(nuevoParrafo, segundo);
+            }
+        }
+        function borrarParrafo() {
+            var siguiente = primerParrafo.nextSibling;
+            if (siguiente) {
+                miDiv.removeChild(siguiente);
+            }
+        }
+        function clonarDiv() {
+            var copia = miDiv.cloneNode(true);
+            document.body.appendChild(copia);
+        }
+    </script>
+</head>
+<body>
+    <div id="miDiv">
+        <p id="primerParrafo">Este es mi primer párrafo</p>
+    </div>
+    <button onclick="añadirParrafo()">Añadir nuevo párrafo</button><br>
+    <button onclick="insertarParrafo()">Insertar nuevo párrafo</button><br>
+    <button onclick="reemplazarParrafo()">Reemplazar párrafo</button><br>
+    <button onclick="borrarParrafo()">Borrar párrafo</button><br>
+    <button onclick="clonarDiv()">Clonar div</button><br>
+</body>
+</html>

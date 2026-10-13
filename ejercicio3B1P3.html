@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <script>
+        var caja;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            caja = document.getElementById('caja');
+        });
+        function cambiarColor(color) {
+            caja.style.backgroundColor = color;
+        }
+    </script>
+</head>
+<body>
+    <div id="caja">Bienvenido a esta página de prueba de colores</div>
+    <br>
+    <button onclick="cambiarColor('blue')">Azul</button><br>
+    <button onclick="cambiarColor('green')">Verde</button><br>
+    <button onclick="cambiarColor('white')">Restablecer color inicial</button>
+</body>
+</html>

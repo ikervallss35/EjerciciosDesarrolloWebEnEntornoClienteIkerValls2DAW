@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <script>
+        var listaElementos;
+        var primerElemento;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            listaElementos = document.getElementById('listaElementos');
+            primerElemento = document.getElementById('primerElemento');
+        });
+        function añadirElemento() {
+            var nuevoLi = document.createElement('li');
+            var texto = document.createTextNode('tigre');
+            nuevoLi.appendChild(texto);
+            listaElementos.appendChild(nuevoLi);
+        }
+        function insertarElemento() {
+            var nuevoLi = document.createElement('li');
+            var texto = document.createTextNode('gato');
+            nuevoLi.appendChild(texto);
+            listaElementos.insertBefore(nuevoLi, primerElemento.nextElementSibling);
+        }
+        function reemplazarElemento() {
+            var segundo = primerElemento.nextElementSibling;
+            if (segundo) {
+                var nuevoLi = document.createElement('li');
+                var texto = document.createTextNode('perro (Elemento reemplazado)');
+                nuevoLi.appendChild(texto);
+                listaElementos.replaceChild(nuevoLi, segundo);
+            }
+        }
+        function borrarElemento() {
+            var siguiente = primerElemento.nextElementSibling;
+            if (siguiente) {
+                listaElementos.removeChild(siguiente);
+            }
+        }
+        function clonarLista() {
+            var copia = listaElementos.cloneNode(true);
+            document.body.appendChild(copia);
+        }
+        function crearSublistaDOM() {
+            var subUl = document.createElement('ul');
+            var subLi = document.createElement('li');
+            var texto = document.createTextNode('Salvaje (DOM)');
+            subLi.appendChild(texto);
+            subUl.appendChild(subLi);
+            primerElemento.appendChild(subUl);
+        }
+        function crearSublistaInnerHTML() {
+            primerElemento.innerHTML += '<ul><li>Salvaje (innerHTML)</li></ul>';
+        }   
+    </script>
+</head>
+<body>
+    <h1>ANIMALES</h1>
+    <ul id="listaElementos">
+        <li id="primerElemento">leon</li>
+        <li>pantera</li>
+        <li>jirafa</li>
+    </ul>
+    <button onclick="añadirElemento()">Añadir nuevo elemento</button><br>
+    <button onclick="insertarElemento()">Insertar nuevo elemento</button><br>
+    <button onclick="reemplazarElemento()">Reemplazar elemento</button><br>
+    <button onclick="borrarElemento()">Borrar elemento</button><br>
+    <button onclick="clonarLista()">Clonar la lista completa</button><br>
+    <button onclick="crearSublistaDOM()">Crear Sublista dentro de leon con funciones DOM</button><br>
+    <button onclick="crearSublistaInnerHTML()">Crear Sublista dentro de leon con innerHTML</button><br>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <script>
+        var input;
+        var boton;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            input = document.getElementById("input");
+            boton = document.getElementById("boton");
+        });
+        function cambiarTipoInput() {
+            if (input.type === "text") {
+                input.setAttribute("type", "password");
+                input.setAttribute("placeholder", "Escribe tu clave secreta...");
+                boton.textContent = "Mostrar contraseña";
+            } else {
+                input.setAttribute("type", "text");
+                input.setAttribute("placeholder", "Escribe tu texto visible...");
+                boton.textContent = "Ocultar contraseña";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input id="input" type="text" placeholder="Escribe tu texto visible...">
+    <button id="boton" onclick="cambiarTipoInput()">Ocultar contraseña</button>
+</body>
+</html>
